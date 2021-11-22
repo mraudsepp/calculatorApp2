@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'second_Screen.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -17,7 +19,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
+  
+ 
   double  result=0,num1=0,num2=0;num resultPower=0;
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2  = TextEditingController();
@@ -61,8 +64,6 @@ class _MyAppState extends State<MyApp> {
       result = resultPower.toDouble();
     });
   }
-
-
 
 
   @override
@@ -172,11 +173,33 @@ class _MyAppState extends State<MyApp> {
                       textStyle: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),),
+                ElevatedButton(
+                  child: const Text('Ava konverter'),
+                              onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondRoute()));
+
+                },
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),),
               ],
             ),
+
 
           ],),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
