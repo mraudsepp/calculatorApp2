@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896615938596",
+    "project_id": "fir-calculator-10740",
+    "storage_bucket": "fir-calculator-10740.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896615938596:android:e934d1303834939910b6b1",
+        "android_client_info": {
+          "package_name": "com.example.calculatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896615938596-28aun2g1f74irdq6bpkq9ncko1jqan75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKzPbCu8fVAtrOxvr9fxTprC5In40mwls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896615938596-28aun2g1f74irdq6bpkq9ncko1jqan75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
