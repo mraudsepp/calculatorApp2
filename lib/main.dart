@@ -82,8 +82,12 @@ class _MyAppState extends State<MyApp> {
     CollectionReference calculations =
         FirebaseFirestore.instance.collection('calculation');
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: Text("Calculator App"),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -91,14 +95,27 @@ class _MyAppState extends State<MyApp> {
           children: [
             Text(
               "Tulemus: $num1 $operator $num2 = $result",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
+
             ),
             SizedBox(
               height: 20,
             ),
             TextField(
               controller: controller1,
+              cursorColor: Colors.grey,
+              keyboardType: TextInputType.number,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
               decoration: InputDecoration(
+                  labelStyle: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2.0,
+                  ),
                   labelText: "Sisesta esimene number",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),
@@ -108,13 +125,22 @@ class _MyAppState extends State<MyApp> {
             ),
             TextField(
               controller: controller2,
+              cursorColor: Colors.grey,
+              keyboardType: TextInputType.number,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
               decoration: InputDecoration(
+                  labelStyle: TextStyle(
+                    color: Colors.grey,
+                    letterSpacing: 2.0,
+                  ),
                   labelText: "Sisesta teine number",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20))),
             ),
             SizedBox(
-              height: 20,
+              height: 90,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -133,11 +159,14 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("+"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                               color: Colors.grey[800])),
                 ),
                 ElevatedButton(
                   onPressed: () async {
@@ -153,7 +182,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("-"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -173,7 +202,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("x2"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -198,7 +227,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("*"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -218,7 +247,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("/"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -233,7 +262,7 @@ class _MyAppState extends State<MyApp> {
                             builder: (context) => const SecondRoute()));
                   },
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Colors.grey,
                       padding:
                       EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       textStyle:
@@ -244,26 +273,28 @@ class _MyAppState extends State<MyApp> {
             ),
             Padding(
               padding: const EdgeInsets.all(40.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    child: const Text('Database'),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const answerPage()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                        textStyle:
-                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      child: const Text('Database'),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const answerPage()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.grey,
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          textStyle:
+                              TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    ),
 
-                ],
+                  ],
+                ),
               ),
             ),
           ],

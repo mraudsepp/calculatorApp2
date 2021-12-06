@@ -15,7 +15,13 @@ class _answerPageState extends State<answerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Solutions page")),
+        backgroundColor: Colors.grey[900],
+        appBar: AppBar(
+            title: Text("Solutions page"),
+          centerTitle: true,
+          backgroundColor: Colors.grey[850],
+          elevation: 0.0,),
+
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -23,11 +29,14 @@ class _answerPageState extends State<answerPage> {
             children: [
               Text(
                 'Read data from Cloud Firestore',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                color: Colors.grey),
               ),
               Container(
-                height: 250,
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                height: 500,
+                padding: const EdgeInsets.symmetric(vertical: 40),
                 child: StreamBuilder<QuerySnapshot>(
                   stream: calculation,
                   builder: (BuildContext context,
@@ -46,7 +55,11 @@ class _answerPageState extends State<answerPage> {
                       itemBuilder: (context, index) {
                         return Text(' ${data.docs[index]['num1']} ${data.docs[index]['operator']} '
                             ' ${data.docs[index]['num2']} = ${data.docs[index]['result']}'
-                            '');
+                            '',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20.0,
+                        ),);
                       },
                     );
                   },
