@@ -58,8 +58,8 @@ body: Column(children: <Widget> [
   }
   ),
   SizedBox(height: 20,),
-  Text(_tulemus1,),
-  Text(_tulemus2),
+  Text(_tulemus1 + ' miles'),
+  Text(_tulemus2 + ' km'),
   ElevatedButton(child: Text('Tühista'),
       onPressed: (){
         setState(() {

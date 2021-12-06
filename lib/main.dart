@@ -133,7 +133,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("+"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
+                      primary: Colors.blue,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -153,7 +153,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("-"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.yellow,
+                      primary: Colors.blue,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -173,7 +173,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("x2"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
+                      primary: Colors.blue,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -198,7 +198,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("*"),
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.orange,
+                      primary: Colors.blue,
                       padding:
                           EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
@@ -225,7 +225,7 @@ class _MyAppState extends State<MyApp> {
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
                 ElevatedButton(
-                  child: const Text('Ava konverter'),
+                  child: const Text('km/mil'),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -235,31 +235,36 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ),
+
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  child: const Text('Ava vastused'),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const answerPage()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                      textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(40.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    child: const Text('Database'),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const answerPage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.blue,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                        textStyle:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  ),
+
+                ],
+              ),
             ),
           ],
         ),
