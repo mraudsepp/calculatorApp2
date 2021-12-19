@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 
 class answerPage extends StatefulWidget {
   const answerPage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _answerPageState extends State<answerPage> {
     return Scaffold(
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
-            title: Text("Solutions page"),
+            title: Text("Firestore results page"),
           centerTitle: true,
           backgroundColor: Colors.grey[850],
           elevation: 0.0,),
