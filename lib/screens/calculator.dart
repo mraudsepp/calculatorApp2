@@ -4,7 +4,6 @@ import 'package:calculatorapp/screens/results.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'converter.dart';
 
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -16,7 +15,6 @@ class _MyAppState extends State<MyApp> {
   double result = 0, num1 = 0, num2 = 0;
   num resultPower = 0;
   var operator = null;
-
 
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2 = TextEditingController();
@@ -71,7 +69,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     CollectionReference calculations =
-    FirebaseFirestore.instance.collection('calculation');
+        FirebaseFirestore.instance.collection('calculation');
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
@@ -90,7 +88,6 @@ class _MyAppState extends State<MyApp> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey),
-
             ),
             SizedBox(
               height: 20,
@@ -138,13 +135,13 @@ class _MyAppState extends State<MyApp> {
               children: [
                 ElevatedButton(
                   onPressed: () async {
+                    add();
                     await calculations.add({
                       'num1': num1,
                       'num2': num2,
-                      'operator' : operator,
+                      'operator': operator,
                       'result': result,
                     }).then((value) => print('Calculation added'));
-                    add();
                     controller1.clear();
                     controller2.clear();
                   },
@@ -152,22 +149,21 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                      textStyle:
-                      TextStyle(
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                      textStyle: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.grey[800])),
                 ),
                 ElevatedButton(
                   onPressed: () async {
+                    sub();
                     await calculations.add({
                       'num1': num1,
                       'num2': num2,
-                      'operator' : operator,
+                      'operator': operator,
                       'result': result
                     }).then((value) => print('Calculation added'));
-                    sub();
                     controller1.clear();
                     controller2.clear();
                   },
@@ -175,19 +171,19 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
                 ElevatedButton(
                   onPressed: () async {
+                    powr();
                     await calculations.add({
                       'num1': num1,
                       'num2': num2,
-                      'operator' : operator,
+                      'operator': operator,
                       'result': result
                     }).then((value) => print('Calculation added'));
-                    powr();
                     controller1.clear();
                     controller2.clear();
                   },
@@ -195,9 +191,9 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
               ],
             ),
@@ -206,13 +202,13 @@ class _MyAppState extends State<MyApp> {
               children: [
                 ElevatedButton(
                   onPressed: () async {
+                    mul();
                     await calculations.add({
                       'num1': num1,
                       'num2': num2,
-                      'operator' : operator,
+                      'operator': operator,
                       'result': result
                     }).then((value) => print('Calculation added'));
-                    mul();
                     controller1.clear();
                     controller2.clear();
                   },
@@ -220,19 +216,19 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
                 ElevatedButton(
                   onPressed: () async {
+                    div();
                     await calculations.add({
                       'num1': num1,
                       'num2': num2,
-                      'operator' : operator,
+                      'operator': operator,
                       'result': result
                     }).then((value) => print('Calculation added'));
-                    div();
                     controller1.clear();
                     controller2.clear();
                   },
@@ -240,9 +236,9 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                       textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
                 ElevatedButton(
                   child: const Text('km/mil'),
@@ -255,15 +251,14 @@ class _MyAppState extends State<MyApp> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.grey,
                       padding:
-                      EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       textStyle:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ),
-
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(40.0),
+              padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -278,12 +273,11 @@ class _MyAppState extends State<MyApp> {
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.grey,
-                          padding:
-                          EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                          textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 5),
+                          textStyle: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
                     ),
-
                   ],
                 ),
               ),
@@ -292,7 +286,5 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
-
   }
-
 }
